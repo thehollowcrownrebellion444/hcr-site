@@ -44,24 +44,41 @@ body::before{
   pointer-events:none;
   z-index:-1;
   background-image:
-    radial-gradient(circle at 20% 10%, rgba(11,11,16,.030) 0 1px, transparent 2px),
-    radial-gradient(circle at 70% 30%, rgba(11,11,16,.025) 0 1px, transparent 2px),
+    /* fine grain */
+    radial-gradient(circle at 18% 12%, rgba(11,11,16,.060) 0 1px, transparent 2px),
+    radial-gradient(circle at 72% 28%, rgba(11,11,16,.055) 0 1px, transparent 2px),
+
+    /* chevron lattice (tighter, sharper) */
     repeating-linear-gradient(135deg,
-      transparent 0 18px,
-      rgba(11,11,16,.018) 18px 19px,
-      transparent 19px 38px
+      transparent 0 11px,
+      rgba(11,11,16,.050) 11px 12px,
+      transparent 12px 24px
     ),
     repeating-linear-gradient(45deg,
-      transparent 0 22px,
-      rgba(11,11,16,.014) 22px 23px,
-      transparent 23px 44px
+      transparent 0 14px,
+      rgba(11,11,16,.040) 14px 15px,
+      transparent 15px 30px
     ),
+
+    /* crown cadence (triangular rhythm) */
     repeating-linear-gradient(0deg,
-      transparent 0 72px,
-      rgba(11,11,16,.016) 72px 73px,
-      transparent 73px 144px
+      transparent 0 48px,
+      rgba(11,11,16,.040) 48px 49px,
+      transparent 49px 96px
+    ),
+
+    /* centered sigil-echo diamond */
+    linear-gradient(45deg,
+      transparent 0 48%,
+      rgba(11,11,16,.060) 48% 49%,
+      transparent 49% 100%
+    ),
+    linear-gradient(135deg,
+      transparent 0 48%,
+      rgba(11,11,16,.050) 48% 49%,
+      transparent 49% 100%
     );
-  opacity:.22;
+  opacity:.48;
 }
 
 /* NAV */
