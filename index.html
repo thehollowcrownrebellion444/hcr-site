@@ -1,91 +1,298 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>The Hollow Crown Rebellion | Corporate + Hospitality Training Media</title>
-  <meta name="description" content="Clear, dependable media production for internal communications, training, hospitality standards, and live events." />
-  <link rel="icon" href="assets/icons/favicon.svg" />
-  <link rel="stylesheet" href="styles.css" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>The Hollow Crown Rebellion</title>
+
+<style>
+:root {
+  --bone: #f2efe9;
+  --ink: #000;
+  --ash: #2b2b2b;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bone);
+  color: var(--ink);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.5;
+}
+
+header {
+  border-bottom: 2px solid var(--ink);
+  padding: 18px 28px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header .brand {
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+header nav a {
+  margin-left: 22px;
+  text-decoration: none;
+  color: var(--ink);
+  font-size: 14px;
+}
+
+header nav a:hover {
+  text-decoration: underline;
+}
+
+main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 80px 28px;
+}
+
+.hero {
+  border: 3px solid var(--ink);
+  padding: 80px;
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 40px;
+}
+
+.hero h1 {
+  font-size: 42px;
+  line-height: 1.15;
+  margin: 0 0 24px 0;
+}
+
+.hero p {
+  font-size: 18px;
+  max-width: 560px;
+}
+
+.hero .actions {
+  margin-top: 36px;
+}
+
+.button {
+  display: inline-block;
+  padding: 14px 22px;
+  border: 2px solid var(--ink);
+  color: var(--ink);
+  text-decoration: none;
+  font-weight: 600;
+  margin-right: 14px;
+}
+
+.button.primary {
+  background: var(--ink);
+  color: var(--bone);
+}
+
+.section {
+  margin-top: 120px;
+}
+
+.section h2 {
+  font-size: 28px;
+  margin-bottom: 28px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 28px;
+}
+
+.card {
+  border: 2px solid var(--ink);
+  padding: 28px;
+}
+
+.card h3 {
+  margin-top: 0;
+}
+
+.card ul {
+  padding-left: 18px;
+}
+
+.process-step {
+  border-left: 4px solid var(--ink);
+  padding-left: 18px;
+  margin-bottom: 22px;
+}
+
+.sigil {
+  border: 2px dashed var(--ash);
+  padding: 28px;
+  font-size: 15px;
+}
+
+footer {
+  border-top: 2px solid var(--ink);
+  margin-top: 120px;
+  padding: 28px;
+  font-size: 13px;
+  display: flex;
+  justify-content: space-between;
+}
+
+@media (max-width: 900px) {
+  .hero {
+    grid-template-columns: 1fr;
+    padding: 48px;
+  }
+
+  .hero h1 {
+    font-size: 34px;
+  }
+}
+</style>
 </head>
+
 <body>
-  <header class="nav">
-    <div class="container nav-inner">
-      <a class="brand" href="index.html">
-        <img src="assets/img/logo.svg" alt="The Hollow Crown Rebellion logo" />
-        <span>The Hollow Crown Rebellion</span>
-      </a>
-      <nav class="nav-links">
-        <a href="services.html">Services</a>
-        <a href="pricing.html">Pricing</a>
-        <a href="process.html">Process</a>
-        <a href="about.html">About</a>
-        <a class="cta" href="contact.html">Contact</a>
-      </nav>
+
+<header>
+  <div class="brand">THE HOLLOW CROWN REBELLION</div>
+  <nav>
+    <a href="#services">Services</a>
+    <a href="#process">Process</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<main>
+
+<section class="hero">
+  <div>
+    <h1>
+      Media for people who are tired of confusion,
+      wasted meetings, and work that doesn’t survive contact with reality.
+    </h1>
+
+    <p>
+      I design and produce internal communication, training, and operational media
+      that exists to be used—not admired.
+    </p>
+
+    <div class="actions">
+      <a class="button primary" href="#contact">Start an Intake</a>
+      <a class="button" href="#services">View Services</a>
     </div>
-  </header>
+  </div>
 
-  <main class="container hero">
-    <section class="hero-grid">
-      <div class="card">
-        <div class="badge">Lead with heart. Execute with discipline.</div>
-        <h1 class="h1">Clear, dependable media production for teams who need things done right the first time.</h1>
-        <p class="lead">Video, audio, and voice-over services for internal communications, training, hospitality standards, and live events.</p>
-        <p class="muted">The Hollow Crown Rebellion is a media production company focused on clarity, execution, and long-term working relationships. We help organizations document processes, communicate internally, and train teams with media that is practical, repeatable, and built to last. This work is designed to be used—consistently—inside real operations.</p>
-        <div class="actions">
-          <a class="button" href="pricing.html">View Pricing</a>
-          <a class="button secondary" href="contact.html">Start an Intake</a>
-        </div>
-        <ul class="kpis">
-          <li>On-location production</li>
-          <li>Professional audio + lighting</li>
-          <li>Fast delivery available</li>
-          <li>Organized final assets</li>
-        </ul>
-      </div>
-      <div class="card hero-media">
-        <img src="assets/img/hero.svg" alt="Media production hero image" />
-      </div>
-    </section>
-
-    <section class="grid3 strip">
-      <article class="card">
-        <h2 class="h2">Corporate Internal Comms & Training</h2>
-        <p class="muted">Onboarding, SOP walkthroughs, safety procedures, leadership messaging, and operational updates.</p>
-        <a href="services.html#corporate">Explore corporate training →</a>
-      </article>
-      <article class="card">
-        <h2 class="h2">Food, Beverage & Hospitality Training</h2>
-        <p class="muted">Service standards, station training, menu execution, plating/specs, and operational walkthroughs.</p>
-        <a href="services.html#hospitality">Explore hospitality training →</a>
-      </article>
-      <article class="card">
-        <h2 class="h2">Live Event Capture + Voice-over</h2>
-        <p class="muted">Clean event recording and professional narration for training and internal media.</p>
-        <a href="services.html#events">Explore capture + VO →</a>
-      </article>
-    </section>
-
-    <section class="card strip">
-      <h2 class="h2">What you get</h2>
-      <div class="grid2">
-        <div>
-          <p class="muted"><strong>Media that reduces friction.</strong> Less repeating yourself. Faster onboarding. Clearer standards.</p>
-          <p class="muted"><strong>Assets that are built for reuse.</strong> Training libraries that can grow without restarting every time.</p>
-        </div>
-        <div>
-          <p class="muted"><strong>Predictable delivery.</strong> Realistic scope, clean reviews, and organized handoff.</p>
-          <p class="muted"><strong>One accountable lead.</strong> No handoffs. No confusion. Clean communication.</p>
-        </div>
-      </div>
-    </section>
-  </main>
-  <footer class="footer">
-    <div class="container">
-      <p>© <span id="y"></span> The Hollow Crown Rebellion. <a href="privacy.html">Privacy</a></p>
-      <p class="small">Video • Audio • Voice-over • Training Systems</p>
+  <div>
+    <!-- Placeholder for sigil / geometry -->
+    <div style="border:2px solid black; height:100%; display:flex; align-items:center; justify-content:center;">
+      SIGIL / GEOMETRY
     </div>
-  </footer>
-  <script>document.getElementById("y").textContent = new Date().getFullYear();</script>
+  </div>
+</section>
+
+<section class="section" id="services">
+  <h2>Services</h2>
+
+  <div class="grid">
+    <div class="card">
+      <h3>Internal Communications & Training</h3>
+      <p>Training, onboarding, and internal messaging that reduces friction instead of creating more of it.</p>
+      <ul>
+        <li>SOP walkthroughs</li>
+        <li>Leadership messages</li>
+        <li>Operational clarity</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>Hospitality Training</h3>
+      <p>Visual standards for kitchens, bars, and FOH teams who don’t have time for theory.</p>
+      <ul>
+        <li>Plating standards</li>
+        <li>Role-based training</li>
+        <li>Consistency at scale</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>Live & Operational Capture</h3>
+      <p>Documentation that holds up after the event is over.</p>
+      <ul>
+        <li>Events</li>
+        <li>Processes</li>
+        <li>Internal reference</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="process">
+  <h2>Process</h2>
+
+  <div class="process-step">
+    <strong>Assess</strong><br />
+    Identify goals, constraints, and where things usually fall apart.
+  </div>
+
+  <div class="process-step">
+    <strong>Design</strong><br />
+    Build media around real workflows, not idealized ones.
+  </div>
+
+  <div class="process-step">
+    <strong>Execute</strong><br />
+    Capture and produce with minimal disruption.
+  </div>
+
+  <div class="process-step">
+    <strong>Deliver</strong><br />
+    Assets ready for repeat use and long-term relevance.
+  </div>
+</section>
+
+<section class="section" id="about">
+  <h2>About</h2>
+
+  <p>
+    I’m Walter Sawan. I’ve spent years in film, documentary, live production,
+    music, and post-production—and I’ve seen exactly how things break.
+  </p>
+
+  <p>
+    This practice exists to remove noise, not add to it.
+    The goal is functional media that holds up under pressure.
+  </p>
+</section>
+
+<section class="section sigil">
+  <p>
+    The Hollow Crown Rebellion sigil represents disciplined illumination:
+    seeing clearly, acting responsibly, and rejecting ornamental authority
+    in favor of functional power.
+  </p>
+</section>
+
+<section class="section" id="contact">
+  <h2>Contact</h2>
+
+  <p>
+    If confusion, delay, or misalignment is costing you time or money,
+    start here.
+  </p>
+
+  <a class="button primary" href="#">Request Contact</a>
+</section>
+
+</main>
+
+<footer>
+  <div>© 2026 The Hollow Crown Rebellion</div>
+  <div>Vancouver</div>
+</footer>
+
 </body>
 </html>
