@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Hollow Crown Rebellion | Vancouver Video Training Assets</title>
+    <meta name="description" content="Clear, dependable media production for teams who need things done right. Vancouver video training assets.">
+    <meta name="keywords" content="Vancouver video training assets, corporate video, SOP video, internal communications">
+
+    <style>
+        /* --- 1. CORE VARIABLES (The "Bone & Ink" Palette) --- */
+        :root {
+            /* Locked Brand Colors (No Dark Mode Override) */
+            --bg-color: #ECEAE4; 
+            --text-color: #0d0d0d; 
+            --border-color: #0d0d0d;
+            
+            /* Typography */
+            --font-main: 'Helvetica Neue', Helvetica, Arial, sans-serif; /* Operational */
+            --font-mono: 'Courier New', Courier, monospace; /* Structural */
+        }
+
+        /* --- 2. GLOBAL RESET --- */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html, body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: var(--font-main);
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        /* --- 3. TYPOGRAPHY --- */
+        h1, h2, h3, h4 {
+            font-family: var(--font-mono);
+            text-transform: uppercase;
+            font-weight: 700;
+            letter-spacing: -0.04em;
+        }
+
+        h1 { font-size: 2.5rem; line-height: 1.1; margin-bottom: 1.5rem; }
+        h2 { font-size: 1.8rem; margin-bottom: 2rem; border-left: 5px solid var(--text-color); padding-left: 1rem; }
+        h3 { font-size: 1.1rem; margin-bottom: 0.5rem; }
+        
+        p { margin-bottom: 1rem; color: #1a1a1a; font-weight: 400; }
+        
+        a { color: var(--text-color); text-decoration: none; }
+
+        /* --- 4. LAYOUT UTILITIES --- */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            border-left: 1px solid var(--border-color);
+            border-right: 1px solid var(--border-color);
+            background: var(--bg-color);
+            min-height: 100vh;
+        }
+
+        .section { padding: 5rem 2rem; border-bottom: 1px solid var(--border-color); }
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+        .grid-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0; }
+
+        /* --- 5. BUTTONS --- */
+        .btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            border: 2px solid var(--text-color);
+            font-family: var(--font-mono);
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            transition: all 0.2s;
+            cursor: pointer;
+            margin-right: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .btn:hover { background: var(--text-color); color: var(--bg-color); }
+        .btn-secondary { border: 1px solid var(--text-color); opacity: 0.8; }
+
+        /* --- 6. HERO SECTION --- */
+        header {
+            text-align: center;
+            padding: 2rem 0;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        .hero-section {
+            padding: 6rem 2rem;
+            text-align: left;
+        }
+        
+        .hero-sub {
+            font-size: 1.25rem;
+            font-family: var(--font-mono);
+            max-width: 700px;
+            margin-bottom: 2rem;
+        }
+
+        /* --- 7. NAVIGATION --- */
+        nav {
+            position: sticky;
+            top: 0;
+            background: var(--bg-color);
+            border-bottom: 1px solid var(--border-color);
+            z-index: 100;
+            padding: 0.8rem 0;
+        }
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            gap: 2rem;
+        }
+        nav a { font-family: var(--font-mono); font-weight: bold; font-size: 0.9rem; }
+        nav a:hover { text-decoration: underline; }
+
+        /* --- 8. SIGIL STATEMENT --- */
+        .sigil-block {
+            background-color: var(--text-color);
+            color: var(--bg-color);
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+        .sigil-block h2 { border: none; color: var(--bg-color); }
+        .sigil-block p { color: #cccccc; max-width: 600px; margin: 0 auto; font-family: var(--font-mono); }
+
+        /* --- 9. SERVICES (Cards) --- */
+        .service-card {
+            border: 1px solid var(--border-color);
+            padding: 2rem;
+            margin: -1px 0 0 -1px; /* Collapses borders */
+            transition: background 0.2s;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .service-card:hover { background-color: #E0DDD5; }
+        .service-list li { list-style: square; margin-left: 1.2rem; margin-bottom: 0.2rem; font-size: 0.85rem; }
+
+        /* --- 10. PROCESS --- */
+        .process-step { margin-bottom: 2rem; }
+        .process-step strong { font-family: var(--font-mono); font-size: 1.1rem; display: block; margin-bottom: 0.5rem; }
+
+        /* --- 11. ABOUT --- */
+        .about-wrap { display: flex; flex-wrap: wrap; gap: 3rem; align-items: center; }
+        .about-img { 
+            width: 300px; height: 300px; 
+            background: #333; /* Placeholder Color */
+            object-fit: cover; 
+            border: 1px solid var(--border-color);
+        }
+
+        /* --- 12. MOBILE --- */
+        @media (max-width: 768px) {
+            .container { border: none; }
+            h1 { font-size: 1.8rem; }
+            .grid-2, .about-wrap { display: block; }
+            .about-img { width: 100%; margin-bottom: 2rem; }
+            .service-card { margin: 0 0 1rem 0; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <header>
+        <img src="banner.png" alt="The Hollow Crown Rebellion" style="max-width: 90%; height: auto; border: 1px solid #000;">
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#services">SERVICES</a></li>
+            <li><a href="#process">PROCESS</a></li>
+            <li><a href="#about">ABOUT</a></li>
+            <li><a href="#contact">CONTACT</a></li>
+        </ul>
+    </nav>
+
+    <section class="section hero-section">
+        <h1>Clear, dependable media production for teams who need things done right.</h1>
+        <p class="hero-sub">Video, audio, and voice-over systems for internal communications, training, hospitality standards, and live operations.</p>
+        
+        <p style="max-width: 600px; margin-bottom: 2rem;">
+            The Hollow Crown Rebellion builds practical media systems designed for real-world use. 
+            Our work prioritizes clarity, repeatability, and long-term reliability — not spectacle.
+        </p>
+
+        <a href="LINK_TO_YOUR_GOOGLE_FORM" class="btn">Get a Quote</a>
+        <a href="#services" class="btn btn-secondary">View Services</a>
+    </section>
+
+    <section class="sigil-block">
+        <h2>The Sigil: Disciplined Execution</h2>
+        <br>
+        <p>It signals responsibility without ego, authority without illusion, and clarity over noise. This mark exists to indicate work that is built to be used, designed to last, and executed with accountability.</p>
+    </section>
+
+    <section id="services" class="section">
+        <h2>Service Systems</h2>
+        <div class="grid-4">
+            
+            <div class="service-card">
+                <h3>Corporate Internal</h3>
+                <p>Media systems for onboarding, SOPs, safety procedures, and leadership messaging.</p>
+                <ul class="service-list">
+                    <li>Training modules</li>
+                    <li>SOP walkthroughs</li>
+                    <li>Safety content</li>
+                    <li>Internal explainers</li>
+                </ul>
+            </div>
+
+            <div class="service-card">
+                <h3>F&B / Hospitality</h3>
+                <p>Training media for restaurants, bars, kitchens, and hospitality teams.</p>
+                <ul class="service-list">
+                    <li>Plating standards</li>
+                    <li>Front-of-house training</li>
+                    <li>Kitchen workflows</li>
+                    <li>Compliance docs</li>
+                </ul>
+            </div>
+
+            <div class="service-card">
+                <h3>Live Event Capture</h3>
+                <p>Documentation and coverage for internal events and corporate gatherings.</p>
+                <ul class="service-list">
+                    <li>Multi-camera capture</li>
+                    <li>Clean audio recording</li>
+                    <li>Post-event docs</li>
+                </ul>
+            </div>
+
+            <div class="service-card">
+                <h3>Voice-Over & Audio</h3>
+                <p>Professional narration and audio assets for training and explainers.</p>
+                <ul class="service-list">
+                    <li>Voice-over recording</li>
+                    <li>Audio cleanup</li>
+                    <li>Asset consistency</li>
+                </ul>
+            </div>
+
+        </div>
+        <br>
+        <div style="text-align: center; margin-top: 2rem;">
+            <a href="LINK_TO_YOUR_GOOGLE_FORM" class="btn">Request a Quote</a>
+        </div>
+    </section>
+
+    <section id="process" class="section">
+        <h2>Operational Process</h2>
+        <div class="grid-2">
+            <div>
+                <div class="process-step">
+                    <strong>01. SCOPE CLEARLY</strong>
+                    We define what the asset must do — not what it should look like.
+                </div>
+                <div class="process-step">
+                    <strong>02. DESIGN FOR USE</strong>
+                    Media is structured for repeatability and longevity.
+                </div>
+            </div>
+            <div>
+                <div class="process-step">
+                    <strong>03. EXECUTE CLEANLY</strong>
+                    Production is efficient, deliberate, and accountable.
+                </div>
+                <div class="process-step">
+                    <strong>04. DELIVER FOR REALITY</strong>
+                    Assets are delivered ready for real environments, not demos.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="section">
+        <div class="about-wrap">
+            <img src="YOUR_PHOTO.jpg" alt="Walter Sawan" class="about-img">
+            
+            <div style="flex: 1;">
+                <h2>About The Rebellion</h2>
+                <p>The Hollow Crown Rebellion is operated by <strong>Walter Sawan</strong>, a media producer with over a decade of experience in film, music videos, and documentary production.</p>
+                <p>This practice exists to translate creative discipline into operational clarity — particularly for organizations that rely on consistent communication and training.</p>
+                <p>The work prioritizes function over flash, systems over one-offs, and trust over hype.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact" class="section" style="border-bottom: none; text-align: center;">
+        <h2>Ready to Execute?</h2>
+        <p>Pricing is intentional and scoped per project to ensure alignment.</p>
+        <br>
+        <a href="LINK_TO_YOUR_GOOGLE_FORM" class="btn">Submit Request</a>
+        <br><br><br>
+        <small style="font-family: var(--font-mono);">&copy; 2026 THE HOLLOW CROWN REBELLION</small>
+    </footer>
+
+</div>
+
+</body>
+</html>

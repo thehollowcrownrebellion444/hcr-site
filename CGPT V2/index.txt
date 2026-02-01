@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>The Hollow Crown Rebellion</title>
+  <meta name="description" content="Clear, dependable media production for teams who need things done right the first time." />
+  <meta name="keywords" content="Vancouver video training assets, internal communications video, hospitality training media, voiceover Vancouver" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="index.html" aria-label="The Hollow Crown Rebellion home">
+        <div class="brand-mark" aria-hidden="true">HCR</div>
+        <div class="brand-title">The Hollow Crown Rebellion</div>
+      </a>
+
+      <nav class="nav" aria-label="Primary">
+        <a href="#services">Services</a>
+        <a href="#process">Process</a>
+        <a href="#about">About</a>
+        <a class="cta" href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero" aria-label="Hero">
+      <div class="hero-grid panel">
+        <div class="panel-inner">
+          <div class="kicker">Lead with heart. Execute with discipline.</div>
+
+          <h1>Clear, dependable media production for teams who need things done right the first time.</h1>
+
+          <p class="lede">
+            Internal communications, training, and operational media—built to be used.
+          </p>
+
+          <div class="actions">
+            <a class="button primary" href="#contact">Start an Intake</a>
+            <a class="button" href="#services">View Services</a>
+          </div>
+        </div>
+
+        <div class="hero-mark" aria-label="Brand mark">
+          <!-- Replace this with your hero/banner SVG if desired -->
+          <!-- Example: <img src="assets/your-hero.svg" alt="The Hollow Crown Rebellion mark" /> -->
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="services" aria-label="Services">
+      <h2>Services</h2>
+
+      <div class="note">
+        <p>End-to-end production for organizations that value clarity, accountability, and outcomes.</p>
+      </div>
+
+      <div class="grid-3" style="margin-top:14px;">
+        <div class="card">
+          <h3>Corporate Internal Communications &amp; Training</h3>
+          <p>Media designed for internal use: onboarding, SOPs, safety procedures, leadership messaging, and operational updates.</p>
+          <ul class="bullets">
+            <li>Onboarding and training modules</li>
+            <li>SOP and process walkthroughs</li>
+            <li>Safety, compliance, and procedural content</li>
+            <li>Leadership messages and internal announcements</li>
+            <li>Modular internal libraries built for ongoing use</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Food, Beverage &amp; Hospitality Training</h3>
+          <p>Training media built for restaurants, bars, kitchens, and hospitality teams—designed to be practical, repeatable, and usable in fast-moving environments.</p>
+          <ul class="bullets">
+            <li>Plating and preparation standards</li>
+            <li>Front- and back-of-house training</li>
+            <li>Health, safety, and compliance walkthroughs</li>
+            <li>Staff onboarding and role-based training</li>
+            <li>Visual references for consistency across locations</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Live Event &amp; Operational Capture</h3>
+          <p>Clean documentation of events, processes, and operations—captured with minimal disruption and delivered for real-world use.</p>
+          <ul class="bullets">
+            <li>Live event documentation</li>
+            <li>Operational process capture</li>
+            <li>Internal presentations and briefings</li>
+            <li>Multi-camera coverage where required</li>
+            <li>Assets delivered for internal distribution</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="process" aria-label="Process">
+      <h2>Process</h2>
+
+      <div class="note">
+        <p>A simple process designed to reduce friction and deliver usable results.</p>
+      </div>
+
+      <div class="grid-2" style="margin-top:14px;">
+        <div class="card">
+          <h3>1. Assess</h3>
+          <p>We identify goals, constraints, risks, and failure points before anything is filmed.</p>
+        </div>
+
+        <div class="card">
+          <h3>2. Design</h3>
+          <p>We plan media that fits real workflows—not idealized scenarios.</p>
+        </div>
+
+        <div class="card">
+          <h3>3. Execute</h3>
+          <p>Production is handled efficiently, with minimal disruption to your team.</p>
+        </div>
+
+        <div class="card">
+          <h3>4. Deliver</h3>
+          <p>Assets are delivered ready for repeat use, onboarding, and scale.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about" aria-label="About">
+      <h2>About</h2>
+
+      <div class="note">
+        <p><strong>The Hollow Crown Rebellion</strong> is a media production practice focused on clarity, execution, and long-term working relationships.</p>
+
+        <p>Founded by Walter Sawan, the work draws on over a decade of experience in film, documentary, live production, and post-production—applied to environments where miscommunication costs time, money, and trust.</p>
+
+        <p>This practice exists to remove noise, reduce friction, and deliver media that functions inside real operations. The goal is not spectacle. The goal is work that holds up over time.</p>
+      </div>
+    </section>
+
+    <section class="section" id="sigil" aria-label="Sigil statement">
+      <h2>Sigil Statement</h2>
+
+      <div class="note">
+        <p>
+          The Hollow Crown Rebellion sigil represents disciplined illumination: the choice to see clearly, act responsibly, and reject ornamental authority in favor of functional power. Paired with the business, it signifies a rebellion against confusion, inefficiency, and performative leadership—executed through clarity, structure, and repeatable systems. The sigil is not a declaration of dominance, but a mark of accountability: authority earned through execution, not claimed through symbolism.
+        </p>
+      </div>
+    </section>
+
+    <section class="section" id="contact" aria-label="Contact">
+      <h2>Contact</h2>
+
+      <div class="note">
+        <p>If you’re looking to reduce confusion, improve training, or document operations clearly, start here.</p>
+
+        <!-- Replace with your real Google Form URL -->
+        <p>
+          <a class="button primary" href="https://forms.gle/REPLACE_WITH_YOUR_FORM" target="_blank" rel="noopener">
+            Request Contact
+          </a>
+        </p>
+      </div>
+    </section>
+
+    <footer class="footer" aria-label="Footer">
+      <div>© 2026 The Hollow Crown Rebellion</div>
+      <div>Vancouver video training assets</div>
+    </footer>
+  </main>
+</body>
+</html>
+```0
