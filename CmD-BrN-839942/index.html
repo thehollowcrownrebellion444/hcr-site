@@ -1242,7 +1242,207 @@ body.light-theme .search-overlay, body.light-theme .shortcuts-overlay { backgrou
 .v24-mini-table{width:100%;border-collapse:collapse;font-size:11.5px}.v24-mini-table th,.v24-mini-table td{border:1px solid var(--border);padding:7px 8px;vertical-align:top}.v24-mini-table th{background:var(--bg2);color:var(--cyan-dim);font-size:9px;text-transform:uppercase;letter-spacing:.12em}
 .v24-packet-notes{min-height:110px}
 @media (max-width: 980px){.mobile-topbar{display:flex}body.mobile-nav-open .sidebar{transform:translateX(0)}.sidebar{position:fixed;left:0;top:0;bottom:0;transform:translateX(-100%);transition:transform .18s ease;z-index:9100;width:min(86vw,320px);min-width:min(86vw,320px);height:100vh;box-shadow:0 18px 50px rgba(0,0,0,.55)}.main{width:100%;overflow-x:hidden}.shell{display:block}.section{padding:18px 14px 24px}.v24-grid,.grid2,.grid3,.grid4,.stat-row,.budget-kpis,.analytics-kpi-grid,.gear-summary{grid-template-columns:1fr !important}.packet-toolbar{flex-direction:column;align-items:stretch}.compact-grid,.v22plus-grid{grid-template-columns:1fr !important}}
-/* ═══════════════════════ VFINAL CSS ═══════════════════════ */
+/* ═══════════════════════ SCRIPT EDITOR CSS ═══════════════════════ */
+.se-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 14px;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 12px 12px 0 0;
+  flex-wrap: wrap;
+}
+.se-toolbar-left, .se-toolbar-right { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.se-element-display {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: .18em;
+  color: var(--cyan);
+  background: rgba(0,207,255,.1);
+  border: 1px solid rgba(0,207,255,.25);
+  border-radius: 6px;
+  padding: 3px 10px;
+  min-width: 140px;
+  text-align: center;
+}
+.se-stat {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--dim);
+  padding: 3px 8px;
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+}
+.se-hint-bar {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 14px;
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-top: none;
+  font-size: 11px;
+  color: var(--ghost);
+  flex-wrap: wrap;
+}
+.se-hint-key {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  background: var(--panel);
+  border: 1px solid var(--border2);
+  border-radius: 4px;
+  padding: 1px 5px;
+  color: var(--dim);
+}
+.se-shell {
+  display: grid;
+  grid-template-columns: 36px 1fr 160px;
+  border: 1px solid var(--border);
+  border-top: none;
+  border-radius: 0 0 12px 12px;
+  overflow: hidden;
+  min-height: 60vh;
+  max-height: 80vh;
+  background: var(--bg2);
+}
+.se-shell.fullscreen {
+  position: fixed;
+  inset: 0;
+  z-index: 9500;
+  max-height: 100vh;
+  border-radius: 0;
+  grid-template-columns: 36px 1fr 200px;
+}
+.se-shell.light-theme { --bg2: #f8f8f2; --panel: #fff; --text: #1a1a1a; --dim: #555; --border: #ddd; }
+.se-gutter {
+  background: var(--panel);
+  border-right: 1px solid var(--border);
+  overflow: hidden;
+  user-select: none;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--ghost);
+  text-align: right;
+  padding-top: 16px;
+  line-height: 1.7;
+}
+.se-editor-wrap {
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 16px 0;
+  position: relative;
+}
+.se-editor {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 13.5px;
+  line-height: 1.7;
+  color: var(--text);
+  outline: none;
+  min-height: 100%;
+  padding: 0 24px;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+.se-editor:empty::before {
+  content: attr(data-placeholder);
+  color: var(--ghost);
+  pointer-events: none;
+  font-style: italic;
+}
+/* Screenplay element styles */
+.se-line { display: block; }
+.se-scene    { color: var(--cyan); font-weight: 700; text-transform: uppercase; margin-top: 20px; }
+.se-action   { color: var(--text); margin: 4px 0; }
+.se-char     { color: var(--amber); font-weight: 700; text-transform: uppercase; margin-top: 14px; margin-left: 35%; }
+.se-dialogue { color: var(--text); margin-left: 25%; margin-right: 20%; }
+.se-paren    { color: var(--dim); font-style: italic; margin-left: 30%; margin-right: 30%; }
+.se-trans    { color: var(--purple); text-align: right; text-transform: uppercase; margin-top: 14px; }
+.se-note     { color: var(--green); font-style: italic; }
+/* Revision marks */
+.se-revised  { border-left: 3px solid var(--amber); }
+
+/* Scene map */
+.se-scene-map {
+  background: var(--panel);
+  border-left: 1px solid var(--border);
+  overflow-y: auto;
+  padding: 12px 8px;
+}
+.se-map-label {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: .2em;
+  color: var(--ghost);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--border);
+}
+.se-map-scene {
+  font-size: 10px;
+  font-family: var(--font-mono);
+  color: var(--dim);
+  padding: 3px 4px;
+  border-radius: 4px;
+  cursor: pointer;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 2px;
+  transition: .1s all;
+  line-height: 1.5;
+}
+.se-map-scene:hover { background: rgba(0,207,255,.08); color: var(--cyan); }
+.se-map-scene-num { color: var(--cyan-dim); font-size: 9px; }
+
+/* Autocomplete */
+.se-autocomplete {
+  position: fixed;
+  background: var(--panel);
+  border: 1px solid var(--border2);
+  border-radius: 10px;
+  box-shadow: 0 8px 32px rgba(0,0,0,.5);
+  z-index: 9600;
+  min-width: 200px;
+  overflow: hidden;
+}
+.se-ac-item {
+  padding: 8px 14px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--dim);
+  cursor: pointer;
+  transition: .1s;
+}
+.se-ac-item:hover, .se-ac-item.active { background: rgba(0,207,255,.1); color: var(--cyan); }
+.se-ac-item .se-ac-type { font-size: 9px; color: var(--ghost); margin-left: 6px; text-transform: uppercase; }
+
+/* Status bar */
+.se-statusbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 14px;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-top: none;
+  border-radius: 0 0 8px 8px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--ghost);
+}
+
+@media (max-width: 980px) {
+  .se-shell { grid-template-columns: 0 1fr 0; }
+  .se-gutter, .se-scene-map { display: none; }
+  .se-editor { padding: 12px 16px; }
+}
+
+</style>
+</head>
+<body>
 .vf-finding{padding:10px 14px;border:1px solid var(--border);border-left:3px solid var(--cyan);border-radius:10px;background:var(--bg2);margin-bottom:8px;font-size:12.5px;line-height:1.65}
 .vf-finding.critical{border-left-color:var(--red)}.vf-finding.high{border-left-color:var(--amber)}.vf-finding.medium{border-left-color:var(--cyan)}.vf-finding.low{border-left-color:var(--green)}
 .vf-sev{font-size:10px;text-transform:uppercase;letter-spacing:.1em;font-weight:700;padding:2px 6px;border-radius:4px;margin-right:6px}
@@ -1434,6 +1634,7 @@ body.light-theme .search-overlay, body.light-theme .shortcuts-overlay { backgrou
       <div class="nav-item" onclick="showSection('v22analytics', this)">⬡ Analytics Dashboard <span class="v20-badge" style="background:rgba(255,68,102,.12);color:var(--red);border-color:rgba(255,68,102,.3)">V22</span></div>
       <div class="nav-item" onclick="showSection('v22export', this)">↓ Export Suite <span class="v20-badge" style="background:rgba(255,68,102,.12);color:var(--red);border-color:rgba(255,68,102,.3)">V22</span></div>
       <div class="nav-item" onclick="showSection('pdfexport', this)">⎙ PDF Exporter <span class="v20-badge" style="background:rgba(0,232,122,.15);color:var(--green);border-color:rgba(0,232,122,.4)">NEW</span></div>
+      <div class="nav-item" onclick="showSection('scripteditor', this)">✎ Script Editor <span class="v20-badge" style="background:rgba(0,232,122,.15);color:var(--green);border-color:rgba(0,232,122,.4)">NEW</span></div>
       <div class="nav-item" onclick="showSection('v22gist', this)">☁ Cloud Sync (Gist) <span class="v20-badge" style="background:rgba(255,68,102,.12);color:var(--red);border-color:rgba(255,68,102,.3)">V22</span></div>
     </div>
     <div class="nav-group">
@@ -3239,6 +3440,75 @@ body.light-theme .search-overlay, body.light-theme .shortcuts-overlay { backgrou
     <button class="btn" onclick="vfPrintPacket()">⎙ Print</button>
   </div>
   <div id="vfPacketOut"><div class="helper">Select episode + scene and generate packet.</div></div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════ -->
+<!-- SCRIPT EDITOR — FULL SCREENPLAY EDITOR                 -->
+<!-- ════════════════════════════════════════════════════════ -->
+<section class="section" id="sec-scripteditor">
+  <div class="section-title">SCRIPT EDITOR</div>
+  <div class="section-sub">Screenplay format · Tab to cycle elements · Character autocomplete · Live page count</div>
+
+  <!-- TOOLBAR -->
+  <div class="se-toolbar">
+    <div class="se-toolbar-left">
+      <select class="select" id="seEpSelect" style="max-width:260px" onchange="seLoadEpisode(this.value)">
+        <option value="">— Select Episode —</option>
+      </select>
+      <div class="se-element-display" id="seElementDisplay">SCENE HEADING</div>
+    </div>
+    <div class="se-toolbar-right">
+      <div class="se-stat" id="sePageCount">0 pages</div>
+      <div class="se-stat" id="seWordCount">0 words</div>
+      <div class="se-stat" id="seSceneCount">0 scenes</div>
+      <button class="btn" onclick="seToggleFullscreen()" id="seFullscreenBtn" title="Fullscreen">⛶</button>
+      <button class="btn" onclick="seToggleTheme()" id="seThemeBtn" title="Toggle theme">☀</button>
+      <button class="btn primary" onclick="seSave()" id="seSaveBtn">↓ Save</button>
+    </div>
+  </div>
+
+  <!-- FORMAT HINT BAR -->
+  <div class="se-hint-bar" id="seHintBar">
+    <span class="se-hint-key">Tab</span> cycle element &nbsp;·&nbsp;
+    <span class="se-hint-key">Enter</span> next line &nbsp;·&nbsp;
+    <span class="se-hint-key">Ctrl+S</span> save &nbsp;·&nbsp;
+    <span class="se-hint-key">Ctrl+Enter</span> new scene &nbsp;·&nbsp;
+    <span class="se-hint-key">@</span> character &nbsp;·&nbsp;
+    <span class="se-hint-key">Esc</span> dismiss autocomplete
+  </div>
+
+  <!-- EDITOR AREA -->
+  <div class="se-shell" id="seShell">
+    <!-- LEFT: LINE NUMBER GUTTER -->
+    <div class="se-gutter" id="seGutter"></div>
+
+    <!-- CENTER: EDITOR -->
+    <div class="se-editor-wrap" id="seEditorWrap">
+      <div class="se-editor"
+           id="seEditor"
+           contenteditable="true"
+           spellcheck="true"
+           autocorrect="off"
+           autocapitalize="off"
+           data-placeholder="Start writing. Tab changes element type. Ctrl+Enter adds a new scene heading."
+      ></div>
+    </div>
+
+    <!-- RIGHT: SCENE MAP -->
+    <div class="se-scene-map" id="seSceneMap">
+      <div class="se-map-label">SCENES</div>
+      <div id="seSceneList"></div>
+    </div>
+  </div>
+
+  <!-- AUTOCOMPLETE DROPDOWN -->
+  <div class="se-autocomplete" id="seAutocomplete" style="display:none"></div>
+
+  <!-- STATUS BAR -->
+  <div class="se-statusbar">
+    <span id="seStatusLeft">No episode loaded</span>
+    <span id="seStatusRight">Ready</span>
+  </div>
 </section>
 
 </main>
@@ -19197,6 +19467,267 @@ function initV21(){
 
   // Expose parser for other modules
   window.vfParseScript = vfParseScript;
+
+})();
+</script>
+
+<script>
+// ═══════════════════════════════════════════════════════════════════
+// WHGA COMMAND BRAIN — SCREENPLAY EDITOR ENGINE
+// Tab-cycle elements · Character autocomplete · Live stats
+// Revision tracking · Scene map · Fullscreen mode · Auto-save
+// ═══════════════════════════════════════════════════════════════════
+(function(){
+  if(window.__whgaEditorLoaded) return;
+  window.__whgaEditorLoaded = true;
+
+  const ELEMENTS = ['scene','action','char','dialogue','paren','trans','note'];
+  const ELEMENT_LABELS = {scene:'SCENE HEADING',action:'ACTION',char:'CHARACTER',dialogue:'DIALOGUE',paren:'PARENTHETICAL',trans:'TRANSITION',note:'NOTE / SLUG'};
+  const TAB_CYCLE   = {scene:'action',action:'char',char:'dialogue',dialogue:'paren',paren:'dialogue',trans:'scene',note:'action'};
+  const ENTER_NEXT  = {scene:'action',action:'action',char:'dialogue',dialogue:'action',paren:'dialogue',trans:'scene',note:'action'};
+  const BASE_CHARS  = ['WALTER','SHADOW WALTER','OVER-GIVER','OVERTHINKER','NUMB-OUT','DISTRUSTFUL ONE','PERFORMER','CLAPPER','PROSECUTOR','PARASITE','LEADERSHIP','DALE','MARGARET','BRENDAN','STEVEN','CAROL','JASON','KYLE','SARAH','CLIENT'];
+
+  let currentEp=null, currentElement='scene', isDirty=false, saveTimer=null;
+  let lightTheme=false, acIndex=-1, acItems=[], fullscreen=false;
+
+  const $ = id => document.getElementById(id);
+
+  function seInit(){
+    const editor = $('seEditor');
+    if(!editor||editor._seInit) return;
+    editor._seInit = true;
+    editor.addEventListener('keydown', seKeyDown);
+    editor.addEventListener('input', seOnInput);
+    editor.addEventListener('mouseup', seUpdateCursor);
+    editor.addEventListener('keyup', seUpdateCursor);
+    document.addEventListener('keydown', e=>{
+      if((e.ctrlKey||e.metaKey)&&e.key==='s'&&currentEp){ e.preventDefault(); seSave(); }
+    });
+    document.addEventListener('click', e=>{ if(!$('seAutocomplete')?.contains(e.target)) seCloseAC(); });
+    updateElementDisplay();
+    populateSeEpSelect();
+  }
+
+  function populateSeEpSelect(){
+    const sel=$('seEpSelect'); if(!sel||sel.options.length>1) return;
+    (window.EPISODES||[]).forEach(ep=>{
+      const o=document.createElement('option'); o.value=ep.code;
+      o.textContent=ep.code+' — '+ep.title; sel.appendChild(o);
+    });
+  }
+
+  window.seLoadEpisode = function(epCode){
+    if(!epCode){ currentEp=null; const e=$('seEditor'); if(e) e.innerHTML=''; seUpdateStats(); return; }
+    currentEp=epCode;
+    seInit();
+    const allScripts=window.getAllScripts?getAllScripts():{};
+    const d=window.getEpData?getEpData(epCode):{};
+    const ep=(window.EPISODES||[]).find(e=>e.code===epCode);
+    const raw=d.script||allScripts[ep?.scriptKey]||'';
+    seLoadRaw(raw);
+    isDirty=false;
+    seSetStatus('left', epCode+(ep?' — '+ep.title:''));
+    seSetStatus('right','Loaded');
+    if(typeof showToast==='function') showToast('Script Editor: '+epCode+' loaded');
+  };
+
+  function seLoadRaw(text){
+    const editor=$('seEditor'); if(!editor) return;
+    editor.innerHTML='';
+    if(!text.trim()){ seAddLine(editor,'scene',''); return; }
+    text.split('\n').forEach(raw=>seAddLine(editor,detectLineType(raw),raw.trim()));
+    seUpdateStats(); seUpdateSceneMap(); seUpdateGutter();
+  }
+
+  function detectLineType(line){
+    const t=line.trim(); if(!t) return 'action';
+    if(/^(INT\.|EXT\.|INT\/EXT\.?|I\/E\.?|EST\.)\s/i.test(t)) return 'scene';
+    if(/^(FADE IN:|FADE OUT\.|CUT TO:|SMASH CUT:|DISSOLVE TO:|THE END)$/i.test(t)) return 'trans';
+    if(/^\(.*\)$/.test(t)) return 'paren';
+    if(/^[A-Z][A-Z\s\-'\.]{1,35}$/.test(t)&&t.length<40&&!/[.,!?]$/.test(t)) return 'char';
+    return 'action';
+  }
+
+  function seAddLine(container,type,text){
+    const div=document.createElement('div');
+    div.className='se-line se-'+type; div.dataset.type=type;
+    div.contentEditable='true'; div.textContent=text||'';
+    container.appendChild(div); return div;
+  }
+
+  function seKeyDown(e){
+    const ac=$('seAutocomplete');
+    if(ac&&ac.style.display!=='none'){
+      if(e.key==='ArrowDown'){ e.preventDefault(); seACMove(1); return; }
+      if(e.key==='ArrowUp'){   e.preventDefault(); seACMove(-1); return; }
+      if(e.key==='Enter'||e.key==='Tab'){ e.preventDefault(); seACSelect(); return; }
+      if(e.key==='Escape'){ seCloseAC(); return; }
+    }
+    if(e.key==='Tab'){
+      e.preventDefault();
+      const line=getCurrentLine(); if(!line) return;
+      const next=e.shiftKey?ELEMENTS[(ELEMENTS.indexOf(line.dataset.type)-1+ELEMENTS.length)%ELEMENTS.length]:(TAB_CYCLE[line.dataset.type]||'action');
+      setLineType(line,next); return;
+    }
+    if((e.ctrlKey||e.metaKey)&&e.key==='Enter'){ e.preventDefault(); insertNewLine($('seEditor'),'scene'); return; }
+    if(e.key==='Enter'){
+      e.preventDefault();
+      const line=getCurrentLine();
+      if(!line){ insertNewLine($('seEditor'),'action'); return; }
+      if(line.dataset.type==='char'&&!line.textContent.trim()){ setLineType(line,'action'); return; }
+      insertNewLine($('seEditor'),ENTER_NEXT[line.dataset.type]||'action',line); return;
+    }
+    if(e.key==='@') setTimeout(()=>seShowCharAC(null,''),10);
+    markDirty();
+  }
+
+  function seOnInput(){
+    const line=getCurrentLine(); if(!line) return;
+    const t=line.textContent.trim();
+    const det=detectLineType(t);
+    if(det!==line.dataset.type&&t.length>4&&(det==='scene'||det==='trans')) setLineType(line,det);
+    if(line.dataset.type==='char'&&t.length>=1) seShowCharAC(null,t); else seCloseAC();
+    seUpdateStats(); seUpdateSceneMap(); seUpdateGutter(); markDirty();
+  }
+
+  function seUpdateCursor(){
+    const line=getCurrentLine(); if(!line) return;
+    currentElement=line.dataset.type||'action'; updateElementDisplay();
+  }
+
+  function getCurrentLine(){
+    const sel=window.getSelection(); if(!sel||!sel.rangeCount) return null;
+    let node=sel.getRangeAt(0).startContainer;
+    while(node&&node!==$('seEditor')){ if(node.nodeType===1&&node.classList.contains('se-line')) return node; node=node.parentNode; }
+    return null;
+  }
+
+  function setLineType(line,type){
+    ELEMENTS.forEach(t=>line.classList.remove('se-'+t));
+    line.classList.add('se-'+type); line.dataset.type=type;
+    currentElement=type; updateElementDisplay();
+  }
+
+  function insertNewLine(editor,type,afterLine){
+    const newLine=seAddLine(document.createDocumentFragment(),type,'');
+    if(afterLine&&afterLine.nextSibling) editor.insertBefore(newLine,afterLine.nextSibling);
+    else editor.appendChild(newLine);
+    const range=document.createRange(); const sel=window.getSelection();
+    range.setStart(newLine,0); range.collapse(true);
+    sel.removeAllRanges(); sel.addRange(range); newLine.focus();
+    currentElement=type; updateElementDisplay();
+  }
+
+  function seShowCharAC(e,query){
+    query=(query||'').toUpperCase();
+    const chars=[...BASE_CHARS,...(window.CHARACTERS||[]).map(c=>c.name?.toUpperCase()).filter(Boolean)];
+    acItems=[...new Set(chars)].filter(c=>!query||c.startsWith(query));
+    if(!acItems.length){ seCloseAC(); return; }
+    const ac=$('seAutocomplete'); acIndex=0;
+    ac.innerHTML=acItems.slice(0,8).map((c,i)=>`<div class="se-ac-item${i===0?' active':''}" onclick="seACPick('${c.replace(/'/g,"\\'")}')">${c}</div>`).join('');
+    const sel=window.getSelection();
+    if(sel&&sel.rangeCount){ const r=sel.getRangeAt(0).getBoundingClientRect(); ac.style.top=(r.bottom+window.scrollY+4)+'px'; ac.style.left=(r.left+window.scrollX)+'px'; }
+    ac.style.display='block';
+  }
+
+  function seACMove(dir){
+    const items=$('seAutocomplete')?.querySelectorAll('.se-ac-item'); if(!items?.length) return;
+    items[acIndex]?.classList.remove('active'); acIndex=Math.max(0,Math.min(items.length-1,acIndex+dir));
+    items[acIndex]?.classList.add('active');
+  }
+
+  function seACSelect(){ if(acItems[acIndex]) seACPick(acItems[acIndex]); }
+
+  window.seACPick = function(name){
+    const line=getCurrentLine();
+    if(line){ line.textContent=name; setLineType(line,'char');
+      const range=document.createRange(); const sel=window.getSelection();
+      range.selectNodeContents(line); range.collapse(false); sel.removeAllRanges(); sel.addRange(range); }
+    seCloseAC();
+  };
+
+  function seCloseAC(){ const ac=$('seAutocomplete'); if(ac) ac.style.display='none'; acIndex=-1; }
+
+  window.seSave = function(){
+    if(!currentEp) return;
+    const raw=$('seEditor')?.querySelectorAll('.se-line');
+    if(!raw) return;
+    const text=Array.from(raw).map(l=>l.textContent).join('\n');
+    if(window.getEpData&&window.save){ const d=getEpData(currentEp); d.script=text; save(); }
+    const ta=document.getElementById('scriptEdit-'+currentEp); if(ta) ta.value=text;
+    isDirty=false; seSetStatus('right','Saved ✓');
+    if(typeof showToast==='function') showToast('Saved: '+currentEp);
+    setTimeout(()=>seSetStatus('right','Ready'),2000);
+  };
+
+  function markDirty(){
+    isDirty=true; seSetStatus('right','Unsaved…');
+    clearTimeout(saveTimer); saveTimer=setTimeout(()=>{ if(isDirty&&currentEp) seSave(); },3000);
+  }
+
+  function seUpdateStats(){
+    const editor=$('seEditor'); if(!editor) return;
+    const text=editor.textContent||'';
+    const words=text.trim().split(/\s+/).filter(Boolean).length;
+    const scenes=editor.querySelectorAll('.se-scene').length;
+    const pages=Math.max(0.1,Math.round(words/180*10)/10);
+    const pc=$('sePageCount'), wc=$('seWordCount'), sc=$('seSceneCount');
+    if(pc) pc.textContent=pages.toFixed(1)+' pages';
+    if(wc) wc.textContent=words.toLocaleString()+' words';
+    if(sc) sc.textContent=scenes+' scenes';
+  }
+
+  function seUpdateSceneMap(){
+    const editor=$('seEditor'), map=$('seSceneList'); if(!editor||!map) return;
+    const scenes=editor.querySelectorAll('.se-scene');
+    map.innerHTML='';
+    scenes.forEach((s,i)=>{
+      const div=document.createElement('div'); div.className='se-map-scene';
+      div.innerHTML=`<span class="se-map-scene-num">SC${String(i+1).padStart(2,'0')}</span> ${(s.textContent||'').trim().slice(0,28)||'—'}`;
+      div.onclick=()=>s.scrollIntoView({behavior:'smooth',block:'center'}); map.appendChild(div);
+    });
+  }
+
+  function seUpdateGutter(){
+    const editor=$('seEditor'), gutter=$('seGutter'); if(!editor||!gutter) return;
+    const n=editor.querySelectorAll('.se-line').length;
+    gutter.innerHTML=Array.from({length:n},(_,i)=>`<div style="padding:0 6px;height:23px;line-height:23px">${i+1}</div>`).join('');
+  }
+
+  function updateElementDisplay(){
+    const d=$('seElementDisplay'); if(d) d.textContent=ELEMENT_LABELS[currentElement]||'ACTION';
+  }
+
+  function seSetStatus(side,text){ const el=$('seStatus'+side); if(el) el.textContent=text; }
+
+  window.seToggleFullscreen = function(){
+    const shell=$('seShell'); if(!shell) return;
+    fullscreen=!fullscreen; shell.classList.toggle('fullscreen',fullscreen);
+    const btn=$('seFullscreenBtn'); if(btn) btn.textContent=fullscreen?'⊠':'⛶';
+    document.body.style.overflow=fullscreen?'hidden':'';
+  };
+
+  window.seToggleTheme = function(){
+    const shell=$('seShell'); if(!shell) return;
+    lightTheme=!lightTheme; shell.classList.toggle('light-theme',lightTheme);
+    const btn=$('seThemeBtn'); if(btn) btn.textContent=lightTheme?'☾':'☀';
+  };
+
+  // Hook showSection
+  function hookShowSection(){
+    const base=window.showSection; if(!base||base.__editorWrapped) return;
+    const w=function(id,el){ base(id,el); if(id==='scripteditor') setTimeout(()=>{ seInit(); populateSeEpSelect(); },150); };
+    w.__editorWrapped=true; window.showSection=w;
+  }
+
+  function boot(){
+    if(!$('seEditor')){ setTimeout(boot,400); return; }
+    hookShowSection(); populateSeEpSelect();
+    if(typeof logActivity==='function') logActivity('Script Editor ready','green');
+  }
+
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',()=>setTimeout(boot,1200));
+  else setTimeout(boot,1200);
 
 })();
 </script>
